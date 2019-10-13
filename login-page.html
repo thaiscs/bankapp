@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Login page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="login-page.css" />
+  <script src="login-page.js"></script>
+</head>
+<body>
+  <main>
+    
+     <form name="loginForm"  method="post" action="" onsubmit="return validateForm()"> 
+      <div class="login-section">
+        <label for="username">Username<br></label>
+        <input type="text" name="username" id="username" placeholder="Enter Username" required>
+      </div>
+      <div class="login-section">
+        <label for="password">Password<br></label>
+        <input type="password" name="password" id="password" placeholder="Enter Password" minlength="6" maxlength="15" required>
+      </div>
+      <div class="button">
+        <button type="submit">Login</button>
+      </div>
+      
+    </form>
+  </main> 
+
+  <footer>
+    <p>Made with &#x2764; at Codaisseur</p>
+  </footer>
+  
+</body>
+</html>
