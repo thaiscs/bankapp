@@ -1,10 +1,24 @@
 let balance = 200
 
-function showBalance(){
+function showBalance() {
   window.alert(`Your balance is €${balance}`)
   return menu()
 }
 
+function withdrawMoney(amount) {
+  amount = parseFloat(window.prompt('Type in the amount € you wish to withdraw:'))
+
+  if (amount > balance){
+		alert('You have insufficient funds for this transaction.');
+    return false;
+    
+}   else	if (amount <= balance){
+    window.confirm(`Do you confirm the withdraw of €${amount}?`);
+    window.alert(`SUCCESSFUL TRANSACTION. Your new balance is €${balance - amount}`);
+    return false;
+}
+return false
+}
 function menu(){
   const choice = window.prompt(
       `
@@ -21,7 +35,7 @@ function menu(){
       return showBalance()
     }
     case '2': {
-      return alert('implement withdraw')
+      return withdrawMoney()
     }
 
     case '3': {
