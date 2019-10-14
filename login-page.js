@@ -46,7 +46,7 @@ function validateForm() {
                 alert('This is your final login attempt, focus now!')
 
             } else {
-                alert('Account`s been blocked! Contact customer service.');
+                alert('Access denied! You`ve exceeded 3 login attempts.');
             }
             
               
