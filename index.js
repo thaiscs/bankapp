@@ -1,53 +1,51 @@
-let balance = 200
+const user = {
+  name: 'Daenerys Stormborn',
+  balance: 200,
+
+}
 
 function showBalance() {
-    window.alert(`Your balance is €${balance}`)
-    return menu()
+  window.alert(`Your balance is €${user.balance}`)
+  return menu()
 }
-
 
 function withdrawMoney(amount) {
-  amount = parseFloat(window.prompt('Type in the amount € you wish to withdraw:'))
+  amount = parseFloat(window.prompt('Type in the amount € you wish to WITHDRAW:'))
 
-  if (amount > balance){
-		alert('You have insufficient funds for this transaction.');
+  if (amount > user.balance){
+        alert('You have insufficient funds for this transaction.');
     return menu() 
     
-}   else	if (amount <= balance){
+}   else	if (amount <= user.balance){
+    user.balance -= amount 
     window.confirm(`Do you confirm the withdraw of €${amount}?`);
-    window.alert(`SUCCESSFUL TRANSACTION. Your new balance is €${balance - amount}`);
+    window.alert(`SUCCESSFUL TRANSACTION. Your new balance is €${user.balance}`);
     return menu() 
     
 }
-return balance = balance - amount
 }
 
-// it`s changing the balance ONLY when I console.log on the browser (WHY? Find solution!)
+function makeDeposit(amount) {
+  amount = parseFloat(window.prompt('Type in the amount € you wish to DEPOSIT:'))
 
-
-function makeDeposit (amount) {
-  amount = parseFloat(window.prompt('Type in the amount € you wish to deposit:'))
-
-  if (amount > balance) {
-    alert('You have insufficient funds for this transaction.');
-
-
-  } else	if (amount <= balance) {
-    window.confirm(`Do you confirm the Deposit of €${amount}?`);
-    window.alert(`SUCCESSFUL TRANSACTION. Your new balance is €${balance - amount}`);
-    return menu();
+  if (amount > user.balance){
+        alert('You have insufficient funds for this transaction.');
+    return menu() 
+    
+}   else	{
+    user.balance += amount 
+    window.confirm(`Do you confirm the deposit of €${amount}?`);
+    window.alert(`SUCCESSFUL TRANSACTION. Your new balance is €${user.balance}`);
+    return menu() 
+    
 }
-
-return balance = balance - amount
-
 }
-
 
 function menu(){
   const choice = window.prompt(
       `
       How can we help you today?
-      Please enter a number
+      Please enter a number:
       1.) Show balance
       2.) Withdraw
       3.) Deposit
@@ -71,7 +69,7 @@ function menu(){
     }
 
     default: {
-      alert('I do not recognize that number, try again')
+      alert('I do not recognize that number, please try again.')
       return menu()
     }
   }
@@ -83,16 +81,10 @@ function start(){
   return menu()
 }
 
-start()
+// start()
 
-var menuToggle = document.querySelector("#menu-toggle");
-var activeElements = document.querySelectorAll(".active-element");
-var toggledMenu = menuToggle.addEventListener("click", function(){
-     // forEach is not supported in IE11
-  // activeElements.forEach(function(e){
-  //     e.classList.toggle("active");
-  // });
-     for(var activated = 0; activated < activeElements.length; activated++){
-          activeElements[activated].classList.toggle("active");
-     }
+const button = document.getElementById("loginButton");
+
+        button.addEventListener("click", function(){
+        document.location.href = "login-page.html";
 })
