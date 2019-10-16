@@ -81,10 +81,4 @@ function start(){
   return menu()
 }
 
-// start()
-
-const button = document.getElementById("loginButton");
-
-        button.addEventListener("click", function(){
-        document.location.href = "login-page.html";
-})
+start()

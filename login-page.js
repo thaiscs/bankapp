@@ -27,7 +27,7 @@ function validateForm() {
         
         if (correctUsername && correctPassword) {
             alert(`Welcome to your Bank Account, ${user.name}!`)
-            window.location = "index.html"
+            window.location = "account.html"
             return false
             
         } 
